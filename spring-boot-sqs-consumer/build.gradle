@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.ansh'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.11.605'
+    compile group: 'com.amazonaws', name: 'amazon-sqs-java-messaging-lib', version: '1.0.3'
+}
